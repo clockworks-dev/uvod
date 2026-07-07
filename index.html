@@ -1,0 +1,1039 @@
+<!doctype html>
+<html lang="hr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upoznavanje s elementima i kriterijima praćenja i ocjenjivanja</title>
+  <meta name="description"
+    content="Informativna web stranica za uvodni sat: elementi, načini vrednovanja i kriteriji ocjenjivanja u predmetu" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=zodiak@400,500,700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root,
+    [data-theme="light"] {
+      --text-xs: clamp(.75rem, .7rem + .25vw, .875rem);
+      --text-sm: clamp(.875rem, .8rem + .35vw, 1rem);
+      --text-base: clamp(1rem, .95rem + .25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + .75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: .25rem;
+      --space-2: .5rem;
+      --space-3: .75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --color-bg: #f7f6f2;
+      --color-surface: #f9f8f5;
+      --color-surface-2: #fbfbf9;
+      --color-surface-offset: #f3f0ec;
+      --color-border: #d4d1ca;
+      --color-divider: #dcd9d5;
+      --color-text: #28251d;
+      --color-text-muted: #67655f;
+      --color-text-faint: #9c9a94;
+      --color-text-inverse: #f9f8f4;
+      --color-primary: #01696f;
+      --color-primary-hover: #0c4e54;
+      --color-primary-highlight: #cedcd8;
+      --color-success: #437a22;
+      --color-warning: #964219;
+      --radius-sm: .375rem;
+      --radius-md: .5rem;
+      --radius-lg: .75rem;
+      --radius-xl: 1rem;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 2px rgba(40, 37, 29, .06);
+      --shadow-md: 0 8px 24px rgba(40, 37, 29, .08);
+      --shadow-lg: 0 18px 48px rgba(40, 37, 29, .12);
+      --font-body: 'General Sans', system-ui, sans-serif;
+      --font-display: 'Zodiak', Georgia, serif;
+      --ssbjj-primary: #ffe640;
+      --ssbjj-secondary: #034ea2;
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #171614;
+      --color-surface: #1c1b19;
+      --color-surface-2: #201f1d;
+      --color-surface-offset: #22211f;
+      --color-border: #393836;
+      --color-divider: #262523;
+      --color-text: #cdccca;
+      --color-text-muted: #a4a29f;
+      --color-text-faint: #777571;
+      --color-text-inverse: #171614;
+      --color-primary: #4f98a3;
+      --color-primary-hover: #227f8b;
+      --color-primary-highlight: #313b3b;
+      --color-success: #6daa45;
+      --color-warning: #bb653b;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, .2);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, .3);
+      --shadow-lg: 0 18px 48px rgba(0, 0, 0, .4);
+      --ssbjj-primary: #ffe640;
+      --ssbjj-secondary: #034ea2;
+    }
+
+    *,
+    :before,
+    :after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
+      scroll-behavior: smooth
+    }
+
+    body {
+      min-height: 100dvh;
+      line-height: 1.6;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      background:
+        radial-gradient(circle at top right, color-mix(in srgb, var(--color-primary) 10%, transparent), transparent 28%),
+        linear-gradient(180deg, var(--color-bg), var(--color-surface));
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+      height: auto
+    }
+
+    a {
+      color: inherit
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+      border: none;
+      background: none
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm)
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto
+    }
+
+    .skip-link:focus {
+      left: var(--space-4);
+      top: var(--space-4);
+      z-index: 1000;
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-md)
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 2rem));
+      margin-inline: auto
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: color-mix(in srgb, var(--color-bg) 84%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent)
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      padding: var(--space-4) 0
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      text-decoration: none
+    }
+
+    .brand-mark {
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: .45rem;
+      border-radius: .8rem;
+      background: linear-gradient(135deg, var(--color-primary-highlight), var(--color-surface-2));
+      color: var(--color-primary);
+      box-shadow: var(--shadow-sm)
+    }
+
+    .brand-title {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      letter-spacing: .02em
+    }
+
+    .brand-sub {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted)
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+      border-radius: var(--radius-full);
+      background: var(--color-surface)
+    }
+
+    .hero {
+      padding: clamp(4rem, 8vw, 7rem) 0 var(--space-12)
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: var(--space-8);
+      align-items: end
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: var(--space-2);
+      align-items: center;
+      padding: .45rem .8rem;
+      border-radius: var(--radius-full);
+      background: var(--color-primary-highlight);
+      color: var(--color-primary);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 1.05;
+      max-width: 12ch;
+      margin-top: var(--space-5)
+    }
+
+    .lead {
+      margin-top: var(--space-5);
+      max-width: 62ch;
+      color: var(--color-text-muted)
+    }
+
+    .hero-card,
+    .card {
+      background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md)
+    }
+
+    .hero-card {
+      padding: var(--space-6)
+    }
+
+    .mini-label {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-3)
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-5)
+    }
+
+    .stat {
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+      background: var(--color-surface-2);
+      border: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent)
+    }
+
+    .stat strong {
+      display: block;
+      font-size: var(--text-lg);
+      line-height: 1.1
+    }
+
+    .stat .emphasized {
+      font-weight: bold;
+      font-size: var(--text-lg);
+      line-height: 1.1;
+      color: var(--color-text);
+    }
+
+    .stat span {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted)
+    }
+
+    main section {
+      padding: var(--space-10) 0
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-6);
+      align-items: end;
+      margin-bottom: var(--space-6);
+      flex-wrap: wrap
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl)
+    }
+
+    .section-note {
+      max-width: 58ch;
+      color: var(--color-text-muted)
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5)
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-5)
+    }
+
+    .card {
+      padding: var(--space-6)
+    }
+
+    .card h3 {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-3)
+    }
+
+    .card p,
+    .card li {
+      color: var(--color-text-muted)
+    }
+
+    .card ul {
+      padding-left: 1.1rem;
+      display: grid;
+      gap: var(--space-2)
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-top: var(--space-4)
+    }
+
+    .pill {
+      padding: .55rem .85rem;
+      border-radius: var(--radius-full);
+      background: var(--color-surface-offset);
+      font-size: var(--text-sm);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent)
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      background: var(--color-surface);
+      box-shadow: var(--shadow-sm)
+    }
+
+    th,
+    td {
+      padding: 1rem;
+      vertical-align: top;
+      text-align: left;
+      border-bottom: 1px solid var(--color-divider)
+    }
+
+    th {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      background: var(--color-surface-offset)
+    }
+
+    tr:last-child td {
+      border-bottom: none
+    }
+
+    .accent {
+      color: var(--color-primary);
+      font-weight: 700;
+      transition: all 150ms ease-in-out;
+    }
+
+    a.accent:hover {
+      color: var(--color-primary-hover);
+    }
+
+    .timeline {
+      display: grid;
+      gap: var(--space-4)
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-4);
+      align-items: start;
+      padding: var(--space-5);
+      background: var(--color-surface);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      border-radius: var(--radius-lg)
+    }
+
+    .step {
+      display: grid;
+      place-items: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      font-size: var(--text-sm);
+      font-weight: 700
+    }
+
+    .footer {
+      padding: var(--space-10) 0 var(--space-12);
+      color: var(--color-text-muted)
+    }
+
+    .footer-box {
+      padding: var(--space-6);
+      border-radius: var(--radius-xl);
+      background: var(--color-surface-offset);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent)
+    }
+
+    .source {
+      font-size: var(--text-sm)
+    }
+
+    .mb-5 {
+      margin-bottom: var(--space-5);
+    }
+
+    .space-between {
+      justify-content: space-between;
+    }
+
+    .ssbjj {
+      position: relative;
+      color: var(--ssbjj-secondary);
+      text-decoration: none;
+      transition: all 250ms ease-in-out;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        background-color: var(--ssbjj-secondary);
+        transition: all 250ms ease-in-out;
+      }
+    }
+
+    .ssbjj:hover {
+      color: var(--ssbjj-primary);
+
+      &::before {
+        width: 100%;
+        height: 1px;
+        background-color: var(--ssbjj-primary);
+      }
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    @media (max-width: 920px) {
+
+      .hero-grid,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr
+      }
+
+      h1 {
+        max-width: 16ch
+      }
+
+      .section-head {
+        align-items: start
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 1rem, 1120px)
+      }
+
+      .stats {
+        grid-template-columns: 1fr
+      }
+
+      th,
+      td {
+        padding: .85rem
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr
+      }
+
+      .step {
+        margin-bottom: var(--space-2)
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      * {
+        transition: none !important;
+        animation: none !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#vrh">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"
+            stroke-linejoin="round" aria-label="Logo">
+            <rect x="6" y="8" width="36" height="30" rx="8"></rect>
+            <path d="M14 18h20"></path>
+            <path d="M14 24h12"></path>
+            <path d="M14 30h8"></path>
+            <path d="M31 24l3 3 6-7"></path>
+          </svg>
+        </span>
+        <span>
+          <span class="brand-title">Praćenje i ocjenjivanje</span>
+          <span class="brand-sub imePredmeta"></span>
+        </span>
+      </a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Promijeni temu"></button>
+    </div>
+  </header>
+
+  <main id="sadrzaj">
+    <section class="hero" id="vrh">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Uvodni sat • <span class="razredGodina"></span>. razred</div>
+          <h1>Upoznavanje s elementima i kriterijima praćenja i ocjenjivanja</h1>
+          <p class="lead">Ova stranica služi kao jasan pregled što se prati tijekom nastave, na koje se načine vrednuje
+            rad učenika i kako se dolazi do zaključne ocjene u predmetu <span class="accent imePredmeta"></span>.</p>
+          <div class="pill-row" aria-label="Ključne oznake">
+            <span class="pill">vrednovanje za učenje</span>
+            <span class="pill">vrednovanje kao učenje</span>
+            <span class="pill">vrednovanje naučenoga</span>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Sažetak predmeta">
+          <div class="mini-label">Što kaže kurikul</div>
+          <p>Uvodni sat je predviđen za upoznavanje učenika s elementima i kriterijima praćenja i ocjenjivanja te
+            uključivanje u Google Učionicu.</p>
+          <div class="stats">
+            <div class="stat"><strong id="kolicinaSati"></strong><span>sati redovne nastave</span></div>
+            <div class="stat"><span class="razredGodina emphasized"></span><span class="emphasized">.</span><span
+                class="emphasized" id="razredOdjel"></span><br><span>razred, smjer <span
+                  class="razredSmjer"></span></span></div>
+            <div class="stat"><strong id="vredonovanjePodjela"></strong><span>vođeno učenje, UTR i samostalne
+                aktivnosti</span>
+            </div>
+            <div class="stat"><strong id="vredonovanjeKolicinaPristupa"></strong><span>osnovna pristupa
+                vrednovanju</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>O nastavniku</h2>
+          </div>
+        </div>
+        <article class="card mb-5">
+          <h3><span id="titula"></span><span id="nastavnik"></span></h3>
+          <ul>
+            <li>Kabinet: <span id="kabinet"></span></li>
+            <li>e-mail: <span id="mail"></span></li>
+            <li>Konzultacije: <span id="konzultacije"></span></li>
+          </ul>
+        </article>
+
+        <div class="section-head">
+          <div>
+            <h2>O nastavi</h2>
+          </div>
+        </div>
+
+        <div class="grid-3 mb-5">
+          <article class="card">
+            <h3>Na Webu</h3>
+            <ul>
+              <li><a href="https://edu.google.com/workspace-for-education/products/classroom/" class="ssbjj bold">Google
+                  Classroom</a></li>
+              <li>...@skole.hr</li>
+              <li>e-mail adresa povezana sa AAI računom</li>
+              <li>Nakon toga: pristup materijalima</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Nastava i provjera znanja</h3>
+            <ul>
+              <li>predavanja <span id="tjednoSati" class="accent"></span> sata tjedno</li>
+              <li>Provjere znanja</li>
+              <li>Položene vježbe</li>
+              <li>Ispit (u pisanom obliku) - ispitni rok (najavljen <span class="accent">14 dana</span> u naprijed)</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Oblici nastave</h3>
+            <ul>
+              <li>Predavanje</li>
+              <li>Izlaganje nastavnika</li>
+              <li>Zadaci i vježbe (na računalima i doma)</li>
+              <li>Prezentacije učenika</li>
+              <li>Learning by doing</li>
+              <li>Rad u grupi / timu</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="grid-2 mb-5">
+          <article class="card">
+            <h3>Prezentacije</h3>
+            <ul>
+              <li>Naslov, sadržaj</li>
+              <li>Razrade teme (natuknice)</li>
+              <li>Korišteni izvori</li>
+              <li>Trajanje prezentacije <span class="accent">15 minuta</span></li>
+              <li>Prijava / Predaja prezentacije: <span class="accent">online</span></li>
+              <li>Planirani termini (moguće izmjene)</li>
+              <li>Vlastiti materijali, od nastavnika</li>
+              <li>Predaja rada nastavniku na uvid najkasnije <span class="accent">tri</span> dana prije (moguće izmjene)
+              </li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Literatura</h3>
+            <ul>
+              <li>Udžbenik</li>
+              <li>Digitalni sadžaj</li>
+              <li>Dodatna literatura</li>
+              <li>Predavanja i nastavni materijali (Classroom)</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="card">
+          <h3>Provjera znanja</h3>
+          <ul>
+            <li>Položene vježbe na računalima</li>
+            <li>Kontinuirano praćenje nastave</li>
+            <li>Fokus gradiva na dio koji je obuhvaćen predavanjima (iz udžbenika i dodatnoj literaturi)</li>
+            <li>Ispit u pisanom obliku</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Što se prati</h2>
+          </div>
+          <p class="section-note">Praćenje je usmjereno na učenikovo razumijevanje sadržaja, primjenu znanja u
+            praktičnim zadacima te razinu samostalnosti, suradnje i odgovornosti u radu.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Usvojenost i razumijevanje sadržaja</h3>
+            <ul>
+              <li>Poznavanje osnovnih pojmova i nastavnih sadržaja.</li>
+              <li>Razumijevanje postupaka, pravila i digitalnih alata.</li>
+              <li>Povezivanje novih znanja s prethodno naučenim.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Primjena znanja</h3>
+            <ul>
+              <li>Rješavanje zadataka u poznatim i novim situacijama.</li>
+              <li>Izrada dopisa, prezentacija, e-poruka, tablica i izvještaja.</li>
+              <li>Točnost, urednost i funkcionalnost izrađenih radova.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Radne navike i dodatni angažman</h3>
+            <ul>
+              <li>Kontinuiranost rada i samostalnost.</li>
+              <li>Sudjelovanje, suradnja i stvaranje radne atmosfere.</li>
+              <li>Projektni zadaci i kvaliteta prezentacije.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Načini vrednovanja</h2>
+          </div>
+          <p class="section-note">Kurikul razlikuje tri komplementarna pristupa kako bi učenici dobili povratnu
+            informaciju tijekom učenja, razvijali samoprocjenu i pokazali što su naučili.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Vrednovanje za učenje</h3>
+            <p>Koristi se za praćenje napretka i prilagodbu poučavanja. Uključuje praćenje aktivnosti, ljestvice
+              procjene, e-portfolio i brze povratne informacije tijekom rada.</p>
+          </article>
+          <article class="card">
+            <h3>Vrednovanje kao učenje</h3>
+            <p>Naglašava samorefleksiju, samovrednovanje i vršnjačko vrednovanje. Učenici procjenjuju vlastiti rad,
+              biraju razinu složenosti zadataka i koriste izlazne kartice ili dnevnike učenja.</p>
+          </article>
+          <article class="card">
+            <h3>Vrednovanje naučenoga</h3>
+            <p>Provodi se kroz usmene i pismene provjere, online provjere, projekte i e-portfolio, uz unaprijed
+              definirane kriterije ocjenjivanja.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Kako se ocjenjuje</h2>
+          </div>
+          <p class="section-note">Ocjena proizlazi iz razine razumijevanja sadržaja, kvalitete primjene znanja i
+            dodatnog angažmana učenika kroz kontinuirani rad i projekte.</p>
+        </div>
+        <div style="overflow:auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Ocjena</th>
+                <th>Usvojenost i razumijevanje sadržaja</th>
+                <th>Primjena znanja</th>
+                <th>Dodatni zadaci i odnos prema radu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Dovoljan (2)</strong></td>
+                <td>Zna samo osnovne pojmove i ne radi kontinuirano.</td>
+                <td>Nesamostalno rješava zadatke; na pisanoj provjeri ostvaruje 46–60% uspjeha.</td>
+                <td>Radi uglavnom na poticaj profesora.</td>
+              </tr>
+              <tr>
+                <td><strong>Dobar (3)</strong></td>
+                <td>Zna osnovne pojmove i njihovu primjenu, ali uglavnom u poznatim situacijama.</td>
+                <td>Potrebna je pomoć profesora u novim situacijama; na pisanoj provjeri ostvaruje 60–75% uspjeha.</td>
+                <td>Pokazuje oscilacije u radu i treba dodatnu motivaciju.</td>
+              </tr>
+              <tr>
+                <td><strong>Vrlo dobar (4)</strong></td>
+                <td>Posjeduje znanje svih pojmova i radi samostalno i kontinuirano.</td>
+                <td>Primjenjuje znanje u poznatim i nepoznatim situacijama; na pisanoj provjeri ostvaruje 75–85%
+                  uspjeha.</td>
+                <td>Stvara radnu atmosferu u razredu i kvalitetno sudjeluje u radu.</td>
+              </tr>
+              <tr>
+                <td><strong>Odličan (5)</strong></td>
+                <td>Posjeduje trajno znanje i sposobnost prenošenja znanja drugima.</td>
+                <td>Uspješno primjenjuje znanje u svim situacijama; na pisanoj provjeri ostvaruje 85–100% uspjeha.</td>
+                <td>Pokazuje kontinuiran rad, izrađuje projekt i kvalitetno prezentira rezultate.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Primjeri dokaza učenja</h2>
+          </div>
+          <p class="section-note">Tijekom godine učenici pokazuju napredak kroz različite zadatke.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Praktični radovi</h3>
+            <ul>
+              <li>izrada službenog dopisa, životopisa i motivacijskog pisma</li>
+              <li>obrasci kartona klijenata i izvoz dokumenata u PDF</li>
+              <li>pisanje poslovnih e-poruka i sigurno upravljanje e-poštom</li>
+              <li>izrada cjenika, računa, kalkulacija i financijskih izvještaja</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Projekti i prezentacije</h3>
+            <ul>
+              <li>kampanja za društvene mreže i završna prezentacija</li>
+              <li>simulacija upravljanja inboxom i poslovnog mjeseca salona</li>
+              <li>prezentacija proizvoda uz unaprijed dogovorene kriterije</li>
+              <li>e-portfolio kao zbirka digitalnih radova</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Što učenik treba znati na početku</h2>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="step">1</div>
+            <div>
+              <h3>Što se prati</h3>
+              <p>Prati se znanje, primjena znanja, samostalnost, aktivnost, urednost rada i odgovornost pri izvršavanju
+                zadataka.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="step">2</div>
+            <div>
+              <h3>Kako se vrednuje</h3>
+              <p>Učenik dobiva povratnu informaciju tijekom rada, procjenjuje vlastiti napredak i pokazuje naučeno kroz
+                provjere, praktične zadatke i projekte.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="step">3</div>
+            <div>
+              <h3>Kako do bolje ocjene</h3>
+              <p>Kontinuiran rad, veća samostalnost, točna i uredna rješenja te kvalitetna prezentacija projekta vode
+                prema višim razinama ocjene.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="step">4</div>
+            <div>
+              <h3>Zaključna ocjena</h3>
+              <p>Zaključna ocjena je rezultat cijelokupnog praćenja i ocjenjivanja učenika (nikako <span
+                  class="accent">NE SAMO</span> aritmetička sredina ocjena)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-box">
+      <p class="source" style="margin-top:var(--space-3)">Temeljeno na Godišnjem izvedbenom kurikulu za predmet
+        <em class="imePredmeta"></em>, <span class="razredGodina"></span>. razred, smjer <span
+          class="razredSmjer"></span>, školska godina <span id="godina"></span>
+      </p>
+    </div>
+  </footer>
+
+
+  <div class="container brand space-between mb-5">
+    <p>Pregled za učenike <a href="https://ss-ban-jjelacic-zapresic.skole.hr/" target="_blank" class="ssbjj">SŠBJJ</a>
+    </p>
+    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button"
+      data-slug="clockworks" data-color="#FFDD00" data-emoji="☕" data-font="Poppins" data-text="Buy me coffee"
+      data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+  </div>
+
+  <script>
+    (function () {
+      const toggle = document.querySelector('[data-theme-toggle]');
+      const root = document.documentElement;
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      function icon(mode) {
+        return mode === 'dark'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>';
+      }
+      function apply(mode) {
+        root.setAttribute('data-theme', mode);
+        toggle.innerHTML = icon(mode);
+        toggle.setAttribute('aria-label', mode === 'dark' ? 'Prebaci na svijetlu temu' : 'Prebaci na tamnu temu');
+      }
+      apply(theme);
+      toggle.addEventListener('click', () => { theme = theme === 'dark' ? 'light' : 'dark'; apply(theme); });
+
+      const predmeti = [
+        {
+          ime: 'Informatička podrška u poslovanju',
+          akronim: 'IPP',
+          razredSmjer: 'kozmetičar',
+          razredOdjel: 'F',
+          razredGodina: 1,
+          kolicinaSati: 70,
+          tjednoSati: '2',
+          vredonovanjePodjela: '20% / 60% / 20%',
+          vredonovanjeKolicinaPristupa: 3,
+          godina: '2026./2027.'
+        },
+        {
+          ime: 'Građa računala',
+          akronim: 'GRAA',
+          razredSmjer: 'tehničar za računarstvo',
+          razredOdjel: 'E',
+          razredGodina: 1,
+          kolicinaSati: 145,
+          tjednoSati: '4',
+          vredonovanjePodjela: '20% / 60% / 20%',
+          vredonovanjeKolicinaPristupa: 3,
+          godina: '2026./2027.'
+        },
+        {
+          ime: 'Programiranje',
+          akronim: 'PRO',
+          razredSmjer: 'tehničar za računarstvo',
+          razredOdjel: 'E',
+          razredGodina: 2,
+          kolicinaSati: 122,
+          tjednoSati: '3 - 4',
+          vredonovanjePodjela: '20% / 60% / 20%',
+          vredonovanjeKolicinaPristupa: 3,
+          godina: '2026./2027.'
+        },
+        {
+          ime: 'Skriptni jezici i web programiranje',
+          akronim: 'SJWP',
+          razredSmjer: 'tehničar za računarstvo',
+          razredOdjel: 'E',
+          razredGodina: 4,
+          kolicinaSati: 70,
+          tjednoSati: '2',
+          vredonovanjePodjela: '20% / 60% / 20%',
+          vredonovanjeKolicinaPristupa: 3,
+          godina: '2026./2027.'
+        }
+      ];
+
+      const nastavnik = [
+        {
+          akronim: 'nik',
+          ime: 'Nikola Markotić',
+          titula: 'univ. bacc. inf. ',
+          kabinet: 'Trenutno nedostupno',
+          mail: 'nikola.markotic1@skole.hr',
+          konzultacije: 'putem emaila'
+        },
+        {
+          akronim: 'ber',
+          ime: 'Bernard Vuković',
+          titula: 'mag. informatol. ',
+          kabinet: '311',
+          mail: 'bernard.vukovic@skole.hr',
+          konzultacije: 'putem emaila (ili Classrooma, kroz komentare školskih zadaća)'
+        },
+      ];
+
+      const params = new URLSearchParams(document.location.search);
+      const subject = params.get('subject');
+      const profesor = params.get('prof');
+
+      const activeSubject = predmeti.find(function (item) {
+        return item.akronim === subject;
+      });
+
+      const activeProfesor = nastavnik.find(function (item) {
+        return item.akronim === profesor;
+      });
+
+      function setupContent({ selector, activeData, subjectAttribute }) {
+        const selectedElement = document.querySelectorAll(selector);
+
+        selectedElement.forEach(function (item) {
+          try {
+            item.textContent = activeData[subjectAttribute];
+          } catch (error) {
+            item.textContent = 'Nema informacija!';
+          }
+        })
+      }
+
+      setupContent({ selector: '.imePredmeta', activeData: activeSubject, subjectAttribute: 'ime' });
+      setupContent({ selector: '.razredGodina', activeData: activeSubject, subjectAttribute: 'razredGodina' });
+      setupContent({ selector: '#kolicinaSati', activeData: activeSubject, subjectAttribute: 'kolicinaSati' });
+      setupContent({ selector: '#razredOdjel', activeData: activeSubject, subjectAttribute: 'razredOdjel' });
+      setupContent({ selector: '.razredSmjer', activeData: activeSubject, subjectAttribute: 'razredSmjer' });
+      setupContent({ selector: '#vredonovanjePodjela', activeData: activeSubject, subjectAttribute: 'vredonovanjePodjela' });
+      setupContent({ selector: '#vredonovanjeKolicinaPristupa', activeData: activeSubject, subjectAttribute: 'vredonovanjeKolicinaPristupa' });
+      setupContent({ selector: '#godina', activeData: activeSubject, subjectAttribute: 'godina' });
+      setupContent({ selector: '#nastavnik', activeData: activeProfesor, subjectAttribute: 'ime' });
+      setupContent({ selector: '#titula', activeData: activeProfesor, subjectAttribute: 'titula' });
+      setupContent({ selector: '#kabinet', activeData: activeProfesor, subjectAttribute: 'kabinet' });
+      setupContent({ selector: '#mail', activeData: activeProfesor, subjectAttribute: 'mail' });
+      setupContent({ selector: '#konzultacije', activeData: activeProfesor, subjectAttribute: 'konzultacije' });
+      setupContent({ selector: '#tjednoSati', activeData: activeSubject, subjectAttribute: 'tjednoSati' });
+    })();
+  </script>
+</body>
+
+</html>

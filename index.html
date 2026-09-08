@@ -823,20 +823,12 @@
         <div class="grid-2">
           <article class="card">
             <h3>Praktični radovi</h3>
-            <ul>
-              <li>izrada službenog dopisa, životopisa i motivacijskog pisma</li>
-              <li>obrasci kartona klijenata i izvoz dokumenata u PDF</li>
-              <li>pisanje poslovnih e-poruka i sigurno upravljanje e-poštom</li>
-              <li>izrada cjenika, računa, kalkulacija i financijskih izvještaja</li>
+            <ul id="prakticno">
             </ul>
           </article>
           <article class="card">
             <h3>Projekti i prezentacije</h3>
-            <ul>
-              <li>kampanja za društvene mreže i završna prezentacija</li>
-              <li>simulacija upravljanja inboxom i poslovnog mjeseca salona</li>
-              <li>prezentacija proizvoda uz unaprijed dogovorene kriterije</li>
-              <li>e-portfolio kao zbirka digitalnih radova</li>
+            <ul id="projekti">
             </ul>
           </article>
         </div>
@@ -901,9 +893,9 @@
   <div class="container brand space-between mb-5">
     <p>Pregled za učenike <a href="https://ss-ban-jjelacic-zapresic.skole.hr/" target="_blank" class="ssbjj">SŠBJJ</a>
     </p>
-    <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button"
+    <!-- <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button"
       data-slug="clockworks" data-color="#FFDD00" data-emoji="☕" data-font="Poppins" data-text="Buy me coffee"
-      data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+      data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script> -->
   </div>
 
   <script>
@@ -935,7 +927,19 @@
           tjednoSati: '2',
           vredonovanjePodjela: '20% / 60% / 20%',
           vredonovanjeKolicinaPristupa: 3,
-          godina: '2026./2027.'
+          godina: '2026./2027.',
+          prakticno: [
+            'Izrada službenog dopisa, životopisa i motivacijskog pisma',
+            'Obrasci kartona klijenata i izvoz dokumenata u PDF', 
+            'Pisanje poslovnih e-poruka i sigurno upravljanje e-poštom', 
+            'Izrada cjenika, računa, kalkulacija i financijskih izvještaja'
+          ],
+          projekti: [
+            'Kampanja za društvene mreže i završna prezentacija',
+            'Simulacija upravljanja inboxom i poslovnog mjeseca salona',
+            'Prezentacija proizvoda uz unaprijed dogovorene kriterije',
+            'E-portfolio kao zbirka digitalnih radova'
+          ]
         },
         {
           ime: 'Građa računala',
@@ -947,7 +951,19 @@
           tjednoSati: '4',
           vredonovanjePodjela: '20% / 60% / 20%',
           vredonovanjeKolicinaPristupa: 3,
-          godina: '2026./2027.'
+          godina: '2026./2027.',
+          prakticno: [
+            'Rastavljanje, prepoznavanje i sastavljanje računala',
+            'Dijagnostika računala koje se ne pokreće', 
+            'Analiza procesora, memorije i sabirnica', 
+            'Sigurnosna kopija, obnavljanje i osnovna zaštita sustava'
+          ],
+          projekti: [
+            'Konfiguracija računala prema namjeni i budžetu',
+            'Servisni slučaj: tehnička podrška korisniku',
+            'Memorijska hijerarhija i performanse računala',
+            'Plan zaštite i oporavka školskog računala'
+          ]
         },
         {
           ime: 'Programiranje',
@@ -959,7 +975,19 @@
           tjednoSati: '3 - 4',
           vredonovanjePodjela: '20% / 60% / 20%',
           vredonovanjeKolicinaPristupa: 3,
-          godina: '2026./2027.'
+          godina: '2026./2027.',
+           prakticno: [
+            'Rekurzivni izračuni i rad s poljem (Matematički alat s funkcijama i rekurzijom)',
+            'Evidencija učenika u datoteci (Sustav za evidenciju učenika i ocjena)', 
+            'Simulator reda čekanja (Red čekanja u školskoj knjižnici ili ambulanti)', 
+            'Pretraživanje najkraćeg puta na karti škole (Pronalazak najkraćeg puta kroz školu)'
+          ],
+          projekti: [
+            'Digitalni planer školskih obveza (Moj školski organizator)',
+            'Sustav posudbe školske opreme (E-posudba informatičke opreme)',
+            'Planer evakuacije i sigurnog izlaza (Siguran put do izlaza)',
+            'Lokalni turistički vodič s preporukom rute (Digitalni vodič kroz lokalnu zajednicu)'
+          ]
         },
         {
           ime: 'Skriptni jezici i web programiranje',
@@ -967,11 +995,24 @@
           razredSmjer: 'tehničar za računarstvo',
           razredOdjel: 'E',
           razredGodina: 4,
-          kolicinaSati: 70,
+          kolicinaSati: 64,
           tjednoSati: '2',
           vredonovanjePodjela: '20% / 60% / 20%',
           vredonovanjeKolicinaPristupa: 3,
-          godina: '2026./2027.'
+          godina: '2026./2027.',
+          prakticno: [
+            'Interaktivni kalkulator potrošnje',
+            'Kviz znanja s odbrojavanjem vremena', 
+            'Dohvat podataka bez osvježavanja stranice', 
+            'Obrazac za prijavu na događaj'
+          ],
+          projekti: [
+            'Školski digitalni vodič',
+            'Rezervacija školskih resursa',
+            'Lokalni turistički vodič ili vodič kroz zavičaj',
+            'Edukativna HTML/JavaScript igra'
+          ]
+
         }
       ];
 
@@ -1011,7 +1052,11 @@
 
         selectedElement.forEach(function (item) {
           try {
-            item.textContent = activeData[subjectAttribute];
+            if (Array.isArray(activeData[subjectAttribute])) {
+              activeData[subjectAttribute].forEach(element => {
+                item.innerHTML += `<li>${element}</li>`
+              });
+            } else item.textContent = activeData[subjectAttribute];
           } catch (error) {
             item.textContent = 'Nema informacija!';
           }
@@ -1032,6 +1077,8 @@
       setupContent({ selector: '#mail', activeData: activeProfesor, subjectAttribute: 'mail' });
       setupContent({ selector: '#konzultacije', activeData: activeProfesor, subjectAttribute: 'konzultacije' });
       setupContent({ selector: '#tjednoSati', activeData: activeSubject, subjectAttribute: 'tjednoSati' });
+      setupContent({ selector: '#prakticno', activeData: activeSubject, subjectAttribute: 'prakticno' });
+      setupContent({ selector: '#projekti', activeData: activeSubject, subjectAttribute: 'projekti' });
     })();
   </script>
 </body>

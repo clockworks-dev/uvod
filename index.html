@@ -681,15 +681,23 @@
           </article>
         </div>
 
-        <article class="card">
-          <h3>Provjera znanja</h3>
-          <ul>
-            <li>Položene vježbe na računalima</li>
-            <li>Kontinuirano praćenje nastave</li>
-            <li>Fokus gradiva na dio koji je obuhvaćen predavanjima (iz udžbenika i dodatnoj literaturi)</li>
-            <li>Ispit u pisanom obliku</li>
-          </ul>
-        </article>
+        <div class="grid-2 mb-5">
+          <article class="card">
+            <h3>Provjera znanja</h3>
+            <ul>
+              <li>Položene vježbe na računalima</li>
+              <li>Kontinuirano praćenje nastave</li>
+              <li>Fokus gradiva na dio koji je obuhvaćen predavanjima (iz udžbenika i dodatnoj literaturi)</li>
+              <li>Ispit u pisanom obliku</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Elementi vrednovanja</h3>
+            <ul id="elementiVrednovanja">
+            </ul>
+          </article>
+        </div>
 
       </div>
     </section>
@@ -1075,6 +1083,11 @@
             'XML',
             'Sigurnost',
             'Planiranje, testiranje i postavljanje web sjedišta na poslužitelj'
+          ],
+          elementiVrednovanja: [
+            'Usvojenost programskih sadržaja',
+            'Primjena znanja',
+            'Sudjelovanje u nastavnom procesu'
           ]
         }
       ];
@@ -1143,6 +1156,7 @@
       setupContent({ selector: '#prakticno', activeData: activeSubject, subjectAttribute: 'prakticno' });
       setupContent({ selector: '#projekti', activeData: activeSubject, subjectAttribute: 'projekti' });
       setupContent({ selector: '#nastavneCjeline', activeData: activeSubject, subjectAttribute: 'nastavneCjeline' });
+      setupContent({ selector: '#elementiVrednovanja', activeData: activeSubject, subjectAttribute: 'elementiVrednovanja' });
     })();
   </script>
 </body>

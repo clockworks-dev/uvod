@@ -816,6 +816,23 @@
       <div class="container">
         <div class="section-head">
           <div>
+            <h2>Nastavne cjeline / Teme</h2>
+          </div>
+          <p class="section-note">Teme koje se tijekom godine obrađuju.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <ul id="nastavneCjeline">
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
             <h2>Primjeri dokaza učenja</h2>
           </div>
           <p class="section-note">Tijekom godine učenici pokazuju napredak kroz različite zadatke.</p>
@@ -939,6 +956,14 @@
             'Simulacija upravljanja inboxom i poslovnog mjeseca salona',
             'Prezentacija proizvoda uz unaprijed dogovorene kriterije',
             'E-portfolio kao zbirka digitalnih radova'
+          ],
+          nastavneCjeline: [
+            'Vrste elektroničke komunikacije',
+            'Programi za oblikovanje i obradu teksta',
+            'Alati za izradu prezentacije',
+            'Programi koji se u poslovanju gospodarskog subjekta koriste za različite namjene',
+            'Pružatelji servisa elektroničke pošte',
+            'Internetski pretraživači i društvene mreže'
           ]
         },
         {
@@ -963,6 +988,31 @@
             'Servisni slučaj: tehnička podrška korisniku',
             'Memorijska hijerarhija i performanse računala',
             'Plan zaštite i oporavka školskog računala'
+          ],
+          nastavneCjeline: [
+            'Unutarnje komponente računala s obzirom na primjenu računala',
+            'Ulazne i izlazne jedinice računala s obzirom na primjenu računala',
+            'Testiranje rada računala',
+            'Spajanje osnovnih dijelova računala',
+            'Pojednostavljeni model CISC procesora',
+            'Pojednostavljeni model RISC procesora',
+            'Izvođenje programa',
+            'Instrukcije procesora',
+            'Sabirnice – unutarnje i vanjske',
+            'Sabirnički ciklus',
+            'Sabirnice osobnih računala',
+            'Ulazni-izlazne sabirnice',
+            'Memorija i memorijska hijerarhija računala',
+            'Značajke memorijskog sustava',
+            'Glavna ili radna memorija',
+            'RAM i ROM memorije',
+            'DRAM i SRAM',
+            'Sekundarna memorija',
+            'Jednostavni hardverski problemi na računalima',
+            'Jednostavni softverski problemi',
+            'Sigurnosna kopija podataka i obnavljanje sustava',
+            'Zaštita računalnih sustava',
+            'Osnove komunikacije i suradnje s korisnicima / tehnička podrška'
           ]
         },
         {
@@ -1011,8 +1061,21 @@
             'Rezervacija školskih resursa',
             'Lokalni turistički vodič ili vodič kroz zavičaj',
             'Edukativna HTML/JavaScript igra'
+          ],
+          nastavneCjeline: [
+            'HTML grafika',
+            'JavaScript',
+            'JS Browser BOM',
+            'JS JSON',
+            'AJAX',
+            'CMS',
+            'PHP osnove',
+            'PHP obrasci',
+            'Ugradnja Appleta u web sjedište',
+            'XML',
+            'Sigurnost',
+            'Planiranje, testiranje i postavljanje web sjedišta na poslužitelj'
           ]
-
         }
       ];
 
@@ -1079,6 +1142,7 @@
       setupContent({ selector: '#tjednoSati', activeData: activeSubject, subjectAttribute: 'tjednoSati' });
       setupContent({ selector: '#prakticno', activeData: activeSubject, subjectAttribute: 'prakticno' });
       setupContent({ selector: '#projekti', activeData: activeSubject, subjectAttribute: 'projekti' });
+      setupContent({ selector: '#nastavneCjeline', activeData: activeSubject, subjectAttribute: 'nastavneCjeline' });
     })();
   </script>
 </body>
